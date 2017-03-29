@@ -5,4 +5,5 @@ package com.example.student.calculator.main;
  */
 
 public interface CalculatorView {
+    void setCalculatorResult(int result);
 }
