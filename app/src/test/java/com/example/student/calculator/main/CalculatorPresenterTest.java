@@ -1,10 +1,11 @@
-package com.example.student.calculator;
+package com.example.student.calculator.main;
 
 import com.example.student.calculator.main.CalculatorPresenter;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -14,8 +15,7 @@ import static org.junit.Assert.assertTrue;
 public class CalculatorPresenterTest {
 
     @Test
-    public void createPresenterTest() {
-        CalculatorPresenter presenter = new CalculatorPresenter();
-        assertNotNull(presenter);
+    public void dummyTest() {
+        assertTrue(true);
     }
 }
