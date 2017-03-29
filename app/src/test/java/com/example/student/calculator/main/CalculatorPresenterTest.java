@@ -45,4 +45,12 @@ public class CalculatorPresenterTest {
         verify(view).setCalculatorResult(5);
     }
 
+    @Test
+    public void shouldShowTwoDigitNumber() {
+        presenter.reset();
+        presenter.onNumberClick(5);
+        presenter.onNumberClick(7);
+
+        verify(view).setCalculatorResult(57);
+    }
 }
