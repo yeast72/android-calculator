@@ -116,6 +116,16 @@
         android:onClick="onNumberClick"/>
 
     <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;-"
+        android:textSize="16pt"
+        android:layout_toRightOf="@id/button_number_0"
+        android:layout_below="@id/button_number_7"
+        android:onClick="onBackClick"/>
+
+    <Button
         android:id="@+id/button_op_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -159,10 +169,22 @@
         android:id="@+id/button_op_eq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
         android:text="="
         android:textSize="16pt"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/button_op_add"
         android:onClick="onOpClick"/>
+
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:textSize="16pt"
+        android:layout_toRightOf="@id/button_op_eq"
+        android:layout_below="@id/button_op_add"
+        android:onClick="onResetClick"/>
 
 </RelativeLayout>

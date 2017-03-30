@@ -34,4 +34,10 @@ public class CalculatorPresenter {
     public void onOpClick(int op) {
         view.setCalculatorResult(op);
     }
+
+    public void onResetClick() {
+    }
+
+    public void onBackClick() {
+    }
 }

@@ -79,4 +79,12 @@ public class MainActivity extends AppCompatActivity implements CalculatorView {
                 break;
         }
     }
+
+    public void onResetClick(View view) {
+        presenter.onResetClick();
+    }
+
+    public void onBackClick(View view) {
+        presenter.onBackClick();
+    }
 }
