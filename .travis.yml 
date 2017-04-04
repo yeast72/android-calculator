@@ -1,0 +1,39 @@
+language: android
+jdk: oraclejdk8
+
+notifications:
+  email: true
+
+branches:
+  only:
+    - master
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
+    - build-tools-25.0.2
+    - android-25
+    - extra-google-m2repository
+    - extra-android-m2repository
+
+licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+
+script:
+  ./gradlew clean build
+
+deploy:
+  provider: releases
+  file_glob: true
+  file: app/build/outputs/apk/*.apk
+  skip_cleanup: true
+
+  on:
+    repo: yeast72/android-calculator
+    jdk: oraclejdk8
+  api_key:
+    secure: ${fda2d0882f795cf32d143dd4bc1623a4246739f6}
