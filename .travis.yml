@@ -24,7 +24,7 @@ licenses:
     - 'google-gdk-license-.+'
 
 script:
-  ./gradlew clean build
+  ./gradlew test
 
 deploy:
   provider: releases
