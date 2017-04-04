@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity implements CalculatorView {
 
     // view implementation
 
-    public void setCalculatorResult(int result) {
+    public void setCalculatorResult(String result) {
         resultTextView.setText("" + result);
     }
+
 
     // event handlers
 
@@ -87,4 +88,5 @@ public class MainActivity extends AppCompatActivity implements CalculatorView {
     public void onBackClick(View view) {
         presenter.onBackClick();
     }
+
 }

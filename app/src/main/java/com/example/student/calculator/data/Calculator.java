@@ -6,6 +6,7 @@ package com.example.student.calculator.data;
 
 public class Calculator {
     private int result;
+    private boolean errorOccur;
 
     public static final int OPERATOR_ADD = 1;
     public static final int OPERATOR_SUB = 2;
@@ -19,6 +20,7 @@ public class Calculator {
 
     public void reset() {
         result = 0;
+        errorOccur = false;
     }
 
     public int setResult(int r) {
@@ -38,17 +40,24 @@ public class Calculator {
                 result *= a;
                 break;
             case OPERATOR_DIV:
-                result /= a;
+                if(a != 0) {
+                    result /= a;
+                    errorOccur = false;
+                }else{
+                    errorOccur = true;
+                    return 0;
+                }
                 break;
         }
         return result;
     }
 
     public boolean isError() {
-        return false;
+        return errorOccur;
     }
 
     public int getResult() {
         return result;
     }
+
 }
