@@ -1,39 +1,18 @@
 language: android
 jdk: oraclejdk8
-
-notifications:
-  email: true
-
-branches:
-  only:
-    - master
+sudo: false
 
 android:
   components:
-    - tools
     - platform-tools
     - tools
-    - build-tools-25.0.2
-    - android-25
-    - extra-google-m2repository
-    - extra-android-m2repository
+    - build-tools-25.0.0
+    - android-24
 
-licenses:
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
+before_install:
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
 script:
-  ./gradlew test
-
-deploy:
-  provider: releases
-  file_glob: true
-  file: app/build/outputs/apk/*.apk
-  skip_cleanup: true
-
-  on:
-    repo: T-Jedsada/Example-Travis
-    jdk: oraclejdk8
-  api_key:
-    secure: ${3833e0abc9df37c62d469f5c238634a092369bd2} 
+    - ./gradlew test
